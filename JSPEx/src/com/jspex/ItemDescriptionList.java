@@ -1,52 +1,47 @@
 package com.jspex;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import CAR.ItemManager;
+
 /**
- * Servlet implementation class HelloWorld
+ * Servlet implementation class ItemDescriptionList
  */
-@WebServlet("/HelloWorld")
-public class HelloWorld extends HttpServlet {
+@WebServlet("/ItemDescriptionList")
+public class ItemDescriptionList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloWorld() {
+    public ItemDescriptionList() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost( request, response );
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/ItemDescriptionList.jsp");
+		request.setAttribute("listItemDescription", ItemManager.getInstance().getItemDescriptionList());
+		dispatcher.forward(request,response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("utf-8");
-		PrintWriter writer = response.getWriter();
-		writer.print("<html>");
-		writer.print("<body>");
-		writer.print("<form action='/JSPEx/test' method='post'>");
-		writer.print("<textarea name='data'></textarea>");
-		writer.print("<input type='submit' value='확인'");
-		writer.print("</form>");
-		writer.print("</body>");
-		writer.print("</html>");
-		writer.close();
-		response.addCookie(new Cookie("test", "test"));
+		// TODO Auto-generated method stub
 	}
 
 }

@@ -1,0 +1,160 @@
+#topMenu {
+	height: 30px;
+	width: 900px;
+	background-color: #2d2d2d;
+	margin: 0 auto;
+}
+
+#topMenu ul li {
+	list-style: none;
+	color: white;
+	float: left;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#topMenu .menuLink {
+	text-decoration: none;
+	color: white;
+	display: black;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Times New Roman;
+}
+
+#topMenu .menuLink:hover {
+	color: skyblue;
+	background-color: #4d4d4d;
+}
+
+#menuContainer {
+	width: 900px;
+	margin: 0 auto;
+}
+
+#menuTitle {
+	height: 100px;
+	margin-top: 100px;
+	border-bottom-width: 5px;
+	border-bottom-style: double;
+	border-bottom-color: #b02109;
+}
+
+#menuCategory {
+	float: left;
+	width: 75%;
+	height: 100px;
+}
+
+#menuCategory p {
+	font-family: "Trebuchet MS", Dotum, Arial;
+	font-family: Berlin Sans FB Demi;
+	font-size: 80px;
+	color: #b02109;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#route {
+	float: right;
+	width: 25%;
+	height: 100px;
+}
+
+#route a {
+	text-decoration: none;
+	color: black;
+}
+
+#route a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#route p {
+	text-align: right;
+	color: black;
+	font-size: 13px;
+}
+
+#menuContents {
+	margin-top: 50px;
+}
+
+#menuContents table {
+	width: 100%;
+}
+
+#menuContents td {
+	border-bottom: 2px solid #967307;
+	height: 180px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#menuContents td.pic {
+	width: 62%;
+}
+
+#menuContents td.desc {
+	width: 38%;
+}
+
+#menuContents p.dishEn {
+	font-family: Berlin Sans FB Demi;
+	font-size: 40px;
+	color: #b02109;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#menuContents p.dishKo {
+	font-family: Berlin Sans FB Demi;
+	font-size: 21px;
+	font-weight: bold;
+	color: #b02109;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #b02109;
+}
+
+#menuContents p.from {
+	font-family: Berlin Sans FB Demi;
+	font-size: 15px;
+	color: #967307;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#menuContents p.dishPrice {
+	font-family: Franklin Gothic Demi;
+	font-size: 30px;
+	color: #967307;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+#menuContents input.detail {
+	height: 35px;
+	background-color: #b02109;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	color: white;
+	border: none;
+}
+
+#menuContents input.insert {
+	height: 35px;
+	background-color: #967307;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	color: white;
+	border: none;
+}

@@ -4,19 +4,23 @@ import java.util.ArrayList;
 
 public class ItemManager {
 	
-	private static ItemManager instance;
+	private static ItemManager instance = null;
 	private ArrayList<ItemDescription> listItemDescription = new ArrayList<ItemDescription>();
 	
 	private ItemManager()
 	{
 		// temporary db data
 		ItemDescription d1 = new ItemDescription();
-		//d1.setItemDescription(calorie, estimatedCookingtime, ingredients, name, price);
-
+		d1.setItemDescription(150, 1, "재료", "바질 페스토 올리브 파스타", 15000);
+		listItemDescription.add(d1);
 	}
 	
 	public static ItemManager getInstance()
 	{
+		if ( instance == null )
+		{
+			instance = new ItemManager();
+		}
 		return instance;
 	}
 	
