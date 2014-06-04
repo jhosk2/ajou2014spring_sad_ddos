@@ -1,13 +1,16 @@
 package CAR;
 
 public class ItemDescription {
+	
 	private int id;
 	private int price;
+	
 	private String name;
 	private int calorie;
 	private String ingredients;
 	private int estimatedCookingTime;
-
+	private String imgPath;
+	
 	public int getId() {
 		return id;
 	}
@@ -57,7 +60,7 @@ public class ItemDescription {
 	}
 	
 	public void setItemDescription(int calorie, int estimatedCookingtime,
-			String ingredients, String name, int price) {
+			String ingredients, String name, int price, String imgPath) {
 		
 		setCalorie(calorie);
 		setEstimatedCookingTime(estimatedCookingTime);
@@ -65,6 +68,15 @@ public class ItemDescription {
 		setIngredients(ingredients);
 		setName(name);
 		setPrice(price);
+		setImgPath( imgPath );
 		
+	}
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	private void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 }

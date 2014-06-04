@@ -1,30 +1,23 @@
 package com.jspex;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import CAR.ItemManager;
-import CAR.Store;
-import CAR.Table;
-
 /**
- * Servlet implementation class ItemDescriptionList
+ * Servlet implementation class SelectItem
  */
-@WebServlet("/ItemDescriptionList")
-public class ItemDescriptionList extends HttpServlet {
+@WebServlet("/SelectItem")
+public class SelectItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ItemDescriptionList() {
+    public SelectItem() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,19 +26,7 @@ public class ItemDescriptionList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/ItemDescriptionList.jsp");
-		
-		Table t = ServletHelper.getTableFromStore(request);
-		
-		if ( t == null )
-		{
-			return;
-		}
-		
-		request.setAttribute("listItemDescription", t.getItemDescriptionList());
-		dispatcher.forward(request,response);
-		
+		// TODO Auto-generated method stub
 	}
 
 	/**
