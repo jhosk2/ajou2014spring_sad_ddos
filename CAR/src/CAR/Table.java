@@ -9,11 +9,17 @@ public class Table {
 	 */
 	private boolean isOccupied = false;
 	private Order order = null;
+	private int id = -1;
+	
+	public Table( int id )
+	{
+		this.setId(id);
+	}
 	
 	public ArrayList<ItemDescription> getItemDescriptionList()
 	{
 		ArrayList<ItemDescription> list = ItemManager.getInstance().getItemDescriptionList();
-		order = new Order();
+		order = new Order(this);
 		return list;
 	}
 	
@@ -59,5 +65,13 @@ public class Table {
 	{
 		this.order = null;
 		this.isOccupied = false;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	private void setId(int id) {
+		this.id = id;
 	}
 }

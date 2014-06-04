@@ -7,10 +7,16 @@ public class Order {
 	private Date dateTime;
 	private int total;
 	private boolean isOrdered = false;
+	private Table table = null;
 
 	private Register register;
 
 	private Item item = new Item();
+	
+	public Order(Table t)
+	{
+		setTable(t);
+	}
 	
 	public void addItemDescription( int itemId, int quantity )
 	{
@@ -20,6 +26,11 @@ public class Order {
 			item.addItemDescription(itemDescription);
 			total += itemDescription.getPrice();
 		}
+	}
+	
+	public Item getItem()
+	{
+		return item;
 	}
 	
 	public void makeOrder(Register register) {
@@ -49,6 +60,14 @@ public class Order {
 
 	public void payment() {
 		register.saveOrder(this);
+	}
+
+	public Table getTable() {
+		return table;
+	}
+
+	private void setTable(Table table) {
+		this.table = table;
 	}
 	
 }

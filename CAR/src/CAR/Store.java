@@ -12,9 +12,9 @@ public class Store {
 	
 	private Store()
 	{
-		Table t1 = new Table();
-		Table t2 = new Table();
-		Table t3 = new Table();
+		Table t1 = new Table(0);
+		Table t2 = new Table(1);
+		Table t3 = new Table(2);
 
 		listTable.add(t1);
 		listTable.add(t2);
