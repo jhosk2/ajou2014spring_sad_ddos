@@ -11,7 +11,13 @@ public class Store {
 	
 	private Store()
 	{
-	
+		Table t1 = new Table();
+		Table t2 = new Table();
+		Table t3 = new Table();
+
+		listTable.add(t1);
+		listTable.add(t2);
+		listTable.add(t3);
 	}
 	
 	private static Store instance = new Store();
