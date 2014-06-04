@@ -65,6 +65,6 @@
 %>
 	</table>
 	
-	<input type="button" value="주문하기" onclick="document.location.href='/CAR/MakeOrder&tid=<%=request.getParameter("tid")%>';"/>
+	<input type="button" value="주문하기" onclick="document.location.href='/CAR/MakeOrder?tid=<%=request.getParameter("tid")%>';"/>
 </body>
 </html>

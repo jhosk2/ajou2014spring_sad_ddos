@@ -65,7 +65,6 @@ public class ItemDescription {
 		setCalorie(calorie);
 		setEstimatedCookingTime(estimatedCookingTime);
 		setIngredients(ingredients);
-		setIngredients(ingredients);
 		setName(name);
 		setPrice(price);
 		setImgPath( imgPath );
