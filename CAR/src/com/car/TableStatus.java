@@ -44,9 +44,10 @@ public class TableStatus extends HttpServlet {
 			
 			if(table.requestTableStatus())
 				tableStatus = TABLE_NOT_EMPTY;
-			else
+			else {
 				tableStatus = TABLE_EMPTY;
-			
+				table.occupyTable();
+			}
 		} else {
 			tableStatus = WRONG_TID;
 		}

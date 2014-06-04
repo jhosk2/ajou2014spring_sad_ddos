@@ -6,27 +6,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	td.table {
-		width: 100px;
-		height: 150px;
-		background-color: green;
+	button {
+		height: 40px;
+		width: 150px;
 	}
 </style>
 </head>
 <body>
 	<form action="TableStatus" method="get">
+	<jsp:include page="ShowTable.jsp"></jsp:include>
 	<Table>
 		<tr>
-			<td class="table"></td>
-			<td class="table"></td>
-			<td class="table"></td>
-			<td class="table"></td>
-		</tr>
-		<tr>
-			<td><button type="submit" name="tid" value="1">Table 1</button></td>
-			<td><button type="submit" name="tid" value="2">Table 2</button></td>
-			<td><button type="submit" name="tid" value="3">Table 3</button></td>
-			<td><button type="submit" name="tid" value="4">Table 4</button></td>
+			<td><button type="submit" name="tid" value="1">NFC</button></td>
+			<td><button type="submit" name="tid" value="2">NFC</button></td>
+			<td><button type="submit" name="tid" value="3">NFC</button></td>
+			<td><button type="submit" name="tid" value="4">NFC</button></td>
 		</tr>
 	</Table>
 	</form>
