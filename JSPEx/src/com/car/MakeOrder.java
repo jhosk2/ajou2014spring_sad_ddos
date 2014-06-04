@@ -1,6 +1,7 @@
 package com.car;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import CAR.Table;
 
 /**
- * Servlet implementation class ItemDescriptionList
+ * Servlet implementation class MakeOrder
  */
-@WebServlet("/ItemDescriptionList")
-public class ItemDescriptionList extends HttpServlet {
+@WebServlet("/MakeOrder")
+public class MakeOrder extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ItemDescriptionList() {
+    public MakeOrder() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +32,7 @@ public class ItemDescriptionList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/ItemDescriptionList.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/MakeOrder.jsp");
 		
 		Table t = ServletHelper.getTableFromStore(request);
 		
@@ -39,7 +40,10 @@ public class ItemDescriptionList extends HttpServlet {
 		{
 			return;
 		}
-		request.setAttribute("listItemDescription", t.getItemDescriptionList());
+		
+		t.makeOrder();
+		
+		request.setAttribute("success", "ok");
 		dispatcher.forward(request,response);
 		
 	}

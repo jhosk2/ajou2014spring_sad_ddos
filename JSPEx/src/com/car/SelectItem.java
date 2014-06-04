@@ -1,6 +1,7 @@
 package com.car;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,12 +47,17 @@ public class SelectItem extends HttpServlet {
 		}
 		catch( NumberFormatException e )
 		{
+			PrintWriter pw = response.getWriter();
+			pw.write("fail");
 			return;
 		}
 		
 		t.selectItem(itemId, quantity);
 		
-		response.getOutputStream().write( 1 );
+		PrintWriter pw = response.getWriter();
+		pw.write("ok");
+		pw.flush();
+		pw.close();
 	}
 
 	/**

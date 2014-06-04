@@ -10,15 +10,9 @@ public class ItemManager {
 	private ItemManager()
 	{
 		// temporary db data
-		ItemDescription d1 = new ItemDescription();
-		d1.setItemDescription(450, 15, "치킨, 새우, 파스타면", "치킨 & 쉬림프 카르보나라", 15000, "chicken_and_shrimp_carbonara.png");
-		listItemDescription.add(d1);
-		ItemDescription d2 = new ItemDescription();
-		d2.setItemDescription(350, 10, "올리브, 바질, 파스타면", "바질 페스토 올리브 파스타", 14000, "basil_pesto_olive_pasta.png");
-		listItemDescription.add(d2);
-		ItemDescription d3 = new ItemDescription();
-		d3.setItemDescription(400, 15, "치킨, 새우, 파스타면, 매운양념", "스파이시 치킨 & 쉬림프 스파게티", 13000, "spicy_chicken_and_shrimp_spaghetti.png");
-		listItemDescription.add(d3);
+		addNewItem(450, 15, "치킨, 새우, 파스타면", "치킨 & 쉬림프 카르보나라", 15000, "chicken_and_shrimp_carbonara.png");
+		addNewItem(350, 10, "올리브, 바질, 파스타면", "바질 페스토 올리브 파스타", 14000, "basil_pesto_olive_pasta.png");
+		addNewItem(400, 15, "치킨, 새우, 파스타면, 매운양념", "스파이시 치킨 & 쉬림프 스파게티", 13000, "spicy_chicken_and_shrimp_spaghetti.png");
 	}
 	
 	public static ItemManager getInstance()
@@ -72,6 +66,9 @@ public class ItemManager {
 		}
 		itemDescription.setId( newId );
 		itemDescription.setItemDescription( calorie, estimatedCookingtime, ingredients, name, price, imgPath );
+		
+		listItemDescription.add( itemDescription );
+		
 		return itemDescription;
 	}
 	

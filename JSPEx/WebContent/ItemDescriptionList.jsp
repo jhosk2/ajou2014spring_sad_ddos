@@ -7,18 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="jquery-1.11.1min.js"></script>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
 	function selectItem(id)
 	{
-		$.get(	"/JSPEx/SelectItem",
+		$.get(	"/CAR/SelectItem",
 				{
+					tid: <%=request.getParameter("tid")%>,
 					iid: id,
 					quantity: 1
 				},
 				function( data )
 				{
-					if ( data == "1" )
+					if ( data == "ok" )
 					{
 						oldval = document.getElementById("quantity_"+id).value * 1;
 						
@@ -63,5 +64,7 @@
 	}
 %>
 	</table>
+	
+	<input type="button" value="주문하기" onclick="document.location.href='/CAR/MakeOrder&tid=<%=request.getParameter("tid")%>';"/>
 </body>
 </html>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Item {
 	
-	private ArrayList<ItemDescription> listDescription;
+	private ArrayList<ItemDescription> listDescription = new ArrayList<ItemDescription>();
 	
 	public ItemDescription[] getList()
 	{

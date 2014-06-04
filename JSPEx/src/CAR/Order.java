@@ -10,7 +10,7 @@ public class Order {
 
 	private Register register;
 
-	private Item item;
+	private Item item = new Item();
 	
 	public void addItemDescription( int itemId, int quantity )
 	{
