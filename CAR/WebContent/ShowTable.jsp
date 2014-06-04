@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="CAR.Table" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,17 +27,30 @@
 	<Table>
 		<thead>
 			<tr>
-				<th>Table 1</th>
-				<th>Table 2</th>
-				<th>Table 3</th>
-				<th>Table 4</th>
+<%	
+	ArrayList<Table> listTable = (ArrayList<Table>)request.getAttribute("tableList");
+	for(int i=0; i<listTable.size(); i++) {
+%>
+				<th>Table <%=i%></th>
+<%
+	}
+%>
 			</tr>
 		</thead>
 		<tr>
-			<td class="table"><img id="table1" src="img/empty_table.png"></td>
-			<td class="table"><img id="table1" src="img/empty_table.png"></td>
-			<td class="table"><img id="table1" src="img/empty_table.png"></td>
-			<td class="table"><img id="table1" src="img/empty_table.png"></td>
+	<%
+		for(int i=0; i<listTable.size(); i++) {
+			if(listTable.get(i).requestTableStatus()) {
+	%>
+			<td class="table"><img id="table<%=i%>" src="img/occupied_table.png"></td>
+	<%
+			} else {	
+	%>
+			<td class="table"><img id="table<%=i%>" src="img/empty_table.png"></td>
+	<%
+			}
+		}
+	%>
 		</tr>
 	</Table>
 </body>
