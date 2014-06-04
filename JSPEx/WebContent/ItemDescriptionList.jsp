@@ -11,8 +11,21 @@
 <script type="text/javascript">
 	function selectItem(id)
 	{
-		$.get("/JSPEx/SelectItem")
-		document.getElementById("quantity_"+id).value = 0;
+		$.get(	"/JSPEx/SelectItem",
+				{
+					iid: id,
+					quantity: 1
+				},
+				function( data )
+				{
+					if ( data == "1" )
+					{
+						oldval = document.getElementById("quantity_"+id).value * 1;
+						
+						document.getElementById("quantity_"+id).value = oldval + 1;
+					}
+				}
+		);
 	}
 </script>
 </head>
@@ -40,7 +53,7 @@
 				<p class="dishIngredient"><%=i.getIngredients()%></p>
 				<p class="dishCalorie"><%=i.getCalorie()%>Cal</p>
 				<p class="dishEstimateCookingTime">예상 조리시간 : <%=i.getEstimatedCookingTime()%></p>
-				<input id="quantity_<%=i.getId()%>" type="text" readonly="readonly"/>
+				<input id="quantity_<%=i.getId()%>" type="text" readonly="readonly" value="0"/>개 주문 대기
 				<input class="insert" type="button" onclick="javascript:selectItem(<%=i.getId()%>)" value="메뉴 담기 +">
 			</td>
 		</tr>

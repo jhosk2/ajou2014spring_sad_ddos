@@ -28,7 +28,17 @@ public class Store {
 	
 	public Table getTable( int tableId )
 	{
-		return listTable.get( tableId );
+		if ( tableId < 0 )
+		{
+			return null;
+		}
+		
+		if ( listTable.size() > tableId )
+		{
+			return listTable.get( tableId );
+		}
+		
+		return null;
 	}
 	
 }
