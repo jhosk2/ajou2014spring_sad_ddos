@@ -40,7 +40,6 @@ public class TableStatus extends HttpServlet {
 		// request table status
 
 		Table table = ServletHelper.getTableFromStore(request);
-		table = Store.getinstance().getTable(0); // test
 		
 		if(table != null) {
 			

@@ -4,12 +4,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.11.1min.js"></script>
 <script type="text/javascript">
 	function showTableStatus(re) {
 		switch (re) {
 		case 1:
-			alert("이 테이블 이용 가능");
-			location.href = "./demo_menu.html";
+			alert("테이블을 점유하였습니다.");
+			document.forms["tableSuccess"].submit();
 			break;
 		case -1:
 			alert("테이블이 이미 사용중입니다.");
@@ -21,6 +22,7 @@
 	}
 </script>
 </head>
-<body onload="showTableStatus(<%= request.getAttribute("tableStatus") %>)">
+<body onload="showTableStatus(<%=request.getAttribute("tableStatus")%>)">
+	<form id="tableSuccess" action="ItemDescriptionList" method="get"></form>
 </body>
 </html>
