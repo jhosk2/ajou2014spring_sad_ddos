@@ -4,8 +4,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function showTableStatus(re) {
+		switch (re) {
+		case 1:
+			alert("이 테이블 이용 가능");
+			location.href = "./demo_menu.html";
+			break;
+		case -1:
+			alert("테이블이 이미 사용중입니다.");
+			break;
+		case -2:
+			alert("잘못된 입력");
+			break;
+		}
+	}
+</script>
 </head>
-<body>
-
+<body onload="showTableStatus(<%= request.getAttribute("tableStatus") %>)">
 </body>
 </html>

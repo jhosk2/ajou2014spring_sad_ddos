@@ -2,6 +2,7 @@ package com.car;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 import CAR.Store;
 import CAR.Table;
 
@@ -10,6 +11,11 @@ import CAR.Table;
  */
 public class ServletHelper {
 
+	/**
+	 * get table object using table id.
+	 * @param request HttpServletRequest
+	 * @return Table object
+	 */
 	public static Table getTableFromStore( HttpServletRequest request )
 	{
 		int tid = 0;

@@ -2,6 +2,7 @@ package com.car;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +40,8 @@ public class TableStatus extends HttpServlet {
 		// request table status
 
 		Table table = ServletHelper.getTableFromStore(request);
+		table = Store.getinstance().getTable(0); // test
+		
 		if(table != null) {
 			
 			if(table.requestTableStatus())
@@ -49,6 +52,10 @@ public class TableStatus extends HttpServlet {
 		} else {
 			tableStatus = WRONG_TID;
 		}
+		
+		request.setAttribute("tableStatus", tableStatus);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/TableStatus.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
