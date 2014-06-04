@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="CAR.Order" %>
+<%
+String success = null;
+Order o = null;
+if ( request.getAttribute("success") instanceof String )
+{
+	success = (String)request.getAttribute("success");
+}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +33,7 @@ function fail()
 </script>
 <body style="color:white">
 <div id="success" style="display:none">
-Your order is on the way. Thank you!
+Your order is on the way. Thank you! <br/> Total price : <%=o.getTotal()%>
 </div>
 <div id="fail" style="display:none">
 Something is wrong..
@@ -33,9 +42,6 @@ Something is wrong..
 </html>
 <script type="text/javascript">
 <%
-if ( request.getAttribute("success") instanceof String )
-{
-	String success = (String)request.getAttribute("success");
 	if ( success.equals("ok") )
 	{
 %>
@@ -48,6 +54,5 @@ if ( request.getAttribute("success") instanceof String )
 	fail();
 <%
 	}
-}
 %>
 </script>
