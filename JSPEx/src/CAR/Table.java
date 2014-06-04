@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Table {
 	
+	/**
+	 * if table is occupied true, otherwise false;
+	 */
 	private boolean isOccupied = false;
 	private Order order = null;
 	
