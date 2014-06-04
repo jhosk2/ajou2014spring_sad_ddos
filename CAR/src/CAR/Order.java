@@ -32,6 +32,11 @@ public class Order {
 		this.register = register;
 		this.dateTime = new Date();
 		this.isOrdered = true;
+		
+		// 주문 들어온거 출력 
+		
+		Store.getinstance().addOrder(this);
+		
 	}
 
 	public int getTotal() {

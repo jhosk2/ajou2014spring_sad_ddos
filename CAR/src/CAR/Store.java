@@ -8,6 +8,7 @@ public class Store {
 	
 	ArrayList<Table> listTable = new ArrayList<Table>();
 	Queue<Register> queueRegister = new LinkedList<Register>();
+	ArrayList<Order> listOrder = new ArrayList<Order>();
 	
 	private Store()
 	{
@@ -30,6 +31,21 @@ public class Store {
 		Register register = queueRegister.poll();
 		queueRegister.offer(register);
 		return register;
+	}
+	
+	public void addOrder( Order order )
+	{
+		listOrder.add(order);
+	}
+	
+	public ArrayList<Order> getOrders()
+	{
+		return listOrder;
+	}
+	
+	public ArrayList<Table> getTables()
+	{
+		return listTable;
 	}
 	
 	public Table getTable( int tableId )
