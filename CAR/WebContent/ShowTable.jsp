@@ -6,7 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>Table status</title>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$().ready(function(){
+	setTimeout(function(){document.location.reload(true);},3000);
+});
+</script>
 <style type="text/css">
 	th {
 		text-align: center;
