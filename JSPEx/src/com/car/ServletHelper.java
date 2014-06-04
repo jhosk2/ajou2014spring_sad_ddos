@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import CAR.Store;
 import CAR.Table;
 
+/**
+ * You can get Table object using this class method {@link #getTableFromStore(HttpServletRequest)}. 
+ */
 public class ServletHelper {
 
 	public static Table getTableFromStore( HttpServletRequest request )
