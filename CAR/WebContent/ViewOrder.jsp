@@ -48,7 +48,11 @@ $('#grid').w2grid({
 <%
 	}
 %>    ]
-});});
+});
+setTimeout(function(){
+	window.location.reload(true);
+}, 5000);
+});
 
 </script>
 </head>
