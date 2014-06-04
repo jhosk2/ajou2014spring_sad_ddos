@@ -7,6 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.11.1min.js"></script>
+<script type="text/javascript">
+	function selectItem(id)
+	{
+		$.get("/JSPEx/SelectItem")
+		document.getElementById("quantity_"+id).value = 0;
+	}
+</script>
 </head>
 <body>
 	<table>
@@ -32,7 +40,8 @@
 				<p class="dishIngredient"><%=i.getIngredients()%></p>
 				<p class="dishCalorie"><%=i.getCalorie()%>Cal</p>
 				<p class="dishEstimateCookingTime">예상 조리시간 : <%=i.getEstimatedCookingTime()%></p>
-				<input class="insert" type="button" value="메뉴 담기 +">
+				<input id="quantity_<%=i.getId()%>" type="text" readonly="readonly"/>
+				<input class="insert" type="button" onclick="javascript:selectItem(<%=i.getId()%>)" value="메뉴 담기 +">
 			</td>
 		</tr>
 <%

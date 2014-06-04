@@ -17,9 +17,10 @@ public class Table {
 		return list;
 	}
 	
-	public void selectItem( int itemId, int quantity )
+	public Order selectItem( int itemId, int quantity )
 	{
 		order.addItemDescription( itemId, quantity );
+		return order;
 	}
 	
 	public void makeOrder()
