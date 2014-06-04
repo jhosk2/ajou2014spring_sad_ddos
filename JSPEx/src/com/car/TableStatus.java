@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import CAR.Store;
 import CAR.Table;
 
 /**
@@ -53,6 +52,7 @@ public class TableStatus extends HttpServlet {
 		}
 		
 		request.setAttribute("tableStatus", tableStatus);
+		request.setAttribute("tid", Integer.parseInt(request.getParameter("tid")));
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/TableStatus.jsp");
 		dispatcher.forward(request, response);
 	}

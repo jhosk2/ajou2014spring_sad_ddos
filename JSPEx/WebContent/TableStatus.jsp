@@ -23,6 +23,8 @@
 </script>
 </head>
 <body onload="showTableStatus(<%=request.getAttribute("tableStatus")%>)">
-	<form id="tableSuccess" action="ItemDescriptionList" method="get"></form>
+	<form id="tableSuccess" action="ItemDescriptionList" method="get">
+		<input type="hidden" name="tid" value="<%=request.getAttribute("tid")%>">
+	</form>
 </body>
 </html>
