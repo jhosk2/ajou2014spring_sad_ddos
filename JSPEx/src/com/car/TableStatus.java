@@ -1,4 +1,4 @@
-package com.jspex;
+package com.car;
 
 import java.io.IOException;
 
@@ -17,24 +17,38 @@ import CAR.Table;
 @WebServlet("/TableStatus")
 public class TableStatus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TableStatus() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	public static final int WRONG_TID = -2;
+	public static final int TABLE_EMPTY = 1;
+	public static final int TABLE_NOT_EMPTY = -1;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public TableStatus() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int tableStatus = 0;
+
 		// request table status
-		int tableId = Integer.parseInt(request.getParameter("tid"));
-		
-		Table table = Store.getinstance().getTable(tableId);
-		table.requestTableStatus();
+
+		Table table = ServletHelper.getTableFromStore(request);
+		if(table != null) {
+			
+			if(table.requestTableStatus())
+				tableStatus = TABLE_NOT_EMPTY;
+			else
+				tableStatus = TABLE_EMPTY;
+			
+		} else {
+			tableStatus = WRONG_TID;
+		}
 	}
 
 	/**

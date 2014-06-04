@@ -28,6 +28,10 @@ public class Table {
 		order.makeOrder( Store.getinstance().allocateRegister() );
 	}
 	
+	/**
+	 * Get table status that is either already occupied or not.
+	 * @return {@link #isOccupied}
+	 */
 	public boolean requestTableStatus()
 	{
 		return isOccupied;
