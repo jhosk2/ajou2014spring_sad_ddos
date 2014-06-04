@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>View order</title>
 <link href="w2ui-1.3.2/w2ui-1.3.2.min.css" rel="stylesheet" type="text/css"/> 
 <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="w2ui-1.3.2/w2ui-1.3.2.min.js"></script>
