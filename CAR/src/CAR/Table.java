@@ -74,4 +74,9 @@ public class Table {
 	private void setId(int id) {
 		this.id = id;
 	}
+	
+	public Order getOrder()
+	{
+		return order;
+	}
 }

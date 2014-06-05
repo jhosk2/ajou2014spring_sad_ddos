@@ -42,7 +42,8 @@ public class MakeOrder extends HttpServlet {
 		}
 		
 		t.makeOrder();
-		
+
+		request.setAttribute("order", t.getOrder());
 		request.setAttribute("success", "ok");
 		dispatcher.forward(request,response);
 		

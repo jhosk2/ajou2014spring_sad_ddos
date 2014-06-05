@@ -4,6 +4,10 @@
 <%
 String success = null;
 Order o = null;
+if ( request.getAttribute("order") instanceof Order )
+{
+	o = (Order)request.getAttribute("order");
+}
 if ( request.getAttribute("success") instanceof String )
 {
 	success = (String)request.getAttribute("success");
