@@ -52,10 +52,12 @@ $('#grid').w2grid({
 	onClick: function(event)
 	{
 		tid = this.get(event.recid).table;
+		recid = event.recid;
+		self = this;
 		$.get("/CAR/Payment?tid="+(tid-1),function(event){
 			if ( event =="ok")
 			{
-				this.remove(recid);
+				self.remove(recid);
 			}
 		});
 	}
