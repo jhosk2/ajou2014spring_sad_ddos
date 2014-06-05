@@ -47,7 +47,15 @@ $('#grid').w2grid({
               { recid: <%=index%>, table: '<%=o.getTable().getId()+1%>', order: '<%=order.toString()%>', date: '<%=o.getDateTime().toString()%>' },
 <%
 	}
-%>    ]
+%>
+],
+	onClick: function(event)
+	{
+		tid = this.get(event.recid).table;
+		$.get("/CAR/Payment?tid="+tid,function(event){
+			alert(event)
+		});
+	}
 });
 setTimeout(function(){
 	window.location.reload(true);

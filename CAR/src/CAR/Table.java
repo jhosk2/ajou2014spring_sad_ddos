@@ -55,10 +55,16 @@ public class Table {
 		return isOccupied;
 	}
 	
-	public void payment()
+	public boolean payment()
 	{
-		order.payment();
-		release();
+		if ( order != null )
+		{
+			order.payment();
+			release();
+			return true;
+		}
+		
+		return false;
 	}
 	
 	private void release()
