@@ -53,7 +53,10 @@ $('#grid').w2grid({
 	{
 		tid = this.get(event.recid).table;
 		$.get("/CAR/Payment?tid="+(tid-1),function(event){
-			alert(event)
+			if ( event =="ok")
+			{
+				this.remove(recid);
+			}
 		});
 	}
 });
