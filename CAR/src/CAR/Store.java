@@ -19,6 +19,8 @@ public class Store {
 		listTable.add(t1);
 		listTable.add(t2);
 		listTable.add(t3);
+		
+		queueRegister.add(new Register(0));
 	}
 	
 	private static Store instance = new Store();
