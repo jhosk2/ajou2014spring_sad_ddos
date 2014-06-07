@@ -52,7 +52,8 @@ public class ItemManager {
 		return "";
 	}
 	
-	public ItemDescription addNewItem( int calorie, int estimatedCookingtime, String ingredients, String name, int price, String imgPath )
+	public ItemDescription addNewItem( int calorie, int estimatedCookingtime,
+			String ingredients, String name, int price, String imgPath )
 	{
 		ItemDescription itemDescription = new ItemDescription();
 		
@@ -72,10 +73,12 @@ public class ItemManager {
 		return itemDescription;
 	}
 	
-	public ItemDescription modifyItem( int id, int calorie, int estimatedCookingtime, String ingredients, String name, int price, String imgPath  )
+	public ItemDescription modifyItem( int id, int calorie, int estimatedCookingtime,
+			String ingredients, String name, int price, String imgPath  )
 	{
 		ItemDescription itemDescription = getItemDescription(id);
-		itemDescription.setItemDescription( calorie, estimatedCookingtime, ingredients, name, price, imgPath );
+		itemDescription.setItemDescription( calorie, estimatedCookingtime,
+				ingredients, name, price, imgPath );
 		return itemDescription;
 	}
 }

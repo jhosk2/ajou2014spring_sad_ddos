@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import CAR.Store;
-import CAR.Table;
 
 /**
  * Servlet implementation class ViewOrder
